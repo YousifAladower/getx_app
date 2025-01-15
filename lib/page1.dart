@@ -1,10 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'controllers/controller_counter.dart';
 import 'home.dart';
 
 class Page1 extends StatelessWidget {
-  const Page1({super.key});
+   Page1({super.key});
+  final ControllerCounter controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,34 @@ class Page1 extends StatelessWidget {
                  Get.back();
                 }
               ),
-            )
+            ),
+              GetBuilder<ControllerCounter>(
+                builder: (controller) => Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          child: IconButton(
+                              onPressed: () {
+                                controller.increment();
+                              },
+                              icon: Icon(
+                                Icons.add,
+                                size: 30,
+                              )),
+                        ),
+                        Container(child: Text("${controller.counter}")),
+                        Container(
+                          child: IconButton(
+                              onPressed: () {
+                                controller.decrement();
+                              },
+                              icon: Icon(
+                                Icons.remove,
+                                size: 30,
+                              )),
+                        ),
+                      ],
+                    ))
           ],
         ),
       ),

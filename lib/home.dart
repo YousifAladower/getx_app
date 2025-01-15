@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_app/main.dart';
 import 'package:getx_app/page2.dart';
 import 'package:getx_app/pagethree.dart';
+import 'package:getx_app/utils/mybinding.dart';
 import 'page1.dart';
 
 class Home extends StatelessWidget {
@@ -21,13 +23,27 @@ class Home extends StatelessWidget {
               child: MaterialButton(
                   color: Colors.green,
                   child: Text(
+                    "login",
+                    style: TextStyle(
+                        fontStyle: FontStyle.italic, color: Colors.white),
+                  ),
+                  onPressed: () {
+                    // Get.to(Page1() );  // for route u can use this or the next
+                    sharepref!.clear();
+                     Get.toNamed('/login');
+                  }),
+            ),
+            Center(
+              child: MaterialButton(
+                  color: Colors.green,
+                  child: Text(
                     "page one",
                     style: TextStyle(
                         fontStyle: FontStyle.italic, color: Colors.white),
                   ),
                   onPressed: () {
-                    // Get.to(Page1());  // for route u can use this or the next
-                    Get.toNamed('/PageOne');
+                    // Get.to(Page1() );  // for route u can use this or the next
+                     Get.toNamed('/PageOne');
                   }),
             ),
             Center(

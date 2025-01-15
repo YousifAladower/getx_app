@@ -15,4 +15,23 @@ class ControllerCounter extends GetxController {
   update();
  }
 
+@override
+  void onInit() {
+    // TODO: implement onInit
+    print("onInit()");
+    super.onInit();
+  }
+@override
+  void onReady() {
+    // TODO: implement onReady
+    print("onReady");
+    super.onReady();
+  }
+
+  @override
+  void onClose() {
+    // TODO: implement onClose
+    print("onClose");
+    super.onClose();
+  }
 }
