@@ -13,12 +13,28 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home page"),
+        title: Text("1".tr), //use translate tr
       ),
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Center(
+              child: MaterialButton(
+                  color: Colors.green,
+                  child: Text(
+                    "changeTheme",
+                    style: TextStyle(
+                        fontStyle: FontStyle.italic, color: Colors.white),
+                  ),
+                  onPressed: () {
+                 if(Get.isDarkMode){
+                  Get.changeTheme(ThemeData.light());
+                 }else{
+                  Get.changeTheme(ThemeData.dark());
+                 }
+                  }),
+            ),
             Center(
               child: MaterialButton(
                   color: Colors.green,

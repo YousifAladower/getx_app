@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_app/controllers/locale.dart';
 import 'package:getx_app/page1.dart';
 import 'package:getx_app/pagethree.dart';
 import 'package:getx_app/utils/mybinding.dart';
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      locale: Get.deviceLocale,
+      translations: MyLocale(),
+
       // initialBinding: MyBinding(),
       // home: PageConter(),
       // home: Home(),

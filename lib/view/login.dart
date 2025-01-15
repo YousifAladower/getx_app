@@ -10,7 +10,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home page"),
+        title: Text("Login page"),
       ),
       body: Container(
         child: Column(
